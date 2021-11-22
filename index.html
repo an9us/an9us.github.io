@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html lang="jp">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>名詞</title>
+    <title>Typing-Game</title>
+    <style>
+
+        #characters{
+            text-align: center;
+            font-size: 3.5rem;
+        }
+        #typed{
+            
+            color: red;
+        }
+    </style>
 </head>
-
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <h2>アルゴリズム01</h2>
-    <div><ruby><rb>領域</rb><rt>りょういき</rt></ruby></div><div><ruby><rb>多数</rb><rt>たすう</rt></ruby></div><div><ruby><rb>変数</rb><rt>へんすう</rt></ruby></div><div><ruby><rb>代入</rb><rt>だいにゅう</rt></ruby></div><div><ruby><rb>数値</rb><rt>すうち</rt></ruby></div><div><ruby><rb>加算</rb><rt>かさん</rt></ruby><ruby><rb>結果</rb><rt>けっか</rt></ruby></div><div><ruby><rb>格納</rb><rt>かくのう</rt></ruby></div><div><ruby><rb>上書</rb><rt>うわが</rt></ruby>き</div><div><ruby><rb>不定</rb><rt>ふてい</rt></ruby></div><div><ruby><rb>定数</rb><rt>ていすう</rt></ruby></div><div><ruby><rb>連続</rb><rt>れんぞく</rt></ruby>（<ruby><rb>順次</rb><rt>じゅんじ</rt></ruby>）</div><div><ruby><rb>反復</rb><rt>はんぷく</rt></ruby>（<ruby><rb>繰返</rb><rt>くりかえ</rt></ruby>し）</div><div></div>
-<br><br>
-’ →シングルクォテーション<br>
-” →ダブルクォテーション
-    <h2>アルゴリズム02</h2>
-   <div><ruby><rb>視覚</rb><rt>しかく</rt></ruby></div><div><ruby><rb>規格</rb><rt>きかく</rt></ruby></div><div><ruby><rb>定</rb><rt>さだ</rt></ruby>められる</div><div><ruby><rb>端子</rb><rt>たんし</rt></ruby><ruby><rb>記号</rb><rt>きごう</rt></ruby></div><div><ruby><rb>処理</rb><rt>しょり</rt></ruby><ruby><rb>記号</rb><rt>きごう</rt></ruby></div><div><ruby><rb>入出力</rb><rt>にゅうしゅつりょく</rt></ruby><ruby><rb>記号</rb><rt>きごう</rt></ruby></div>
+    <div id="characters">
+        <span id="typed"></span><span id="untyped">HelloWorld</span>
+    </div>
+    <script>
+        const typedField = document.getElementById("typed");
+        const untypedField = document.getElementById("untyped");
+        
+        const strs = [
+            'boolean','break','case','class','continue','else','for','if','new','print','public','return','static','string','switch','system','this','void','float','double','int','char','long','byte','main','do','while','enum','extends','super','equal','catch','finally','throw','try','unable','minimum','implements','price','constructor','error','entry','warning','download','including','save','table','restart','dialog','replace','let','port','component','define','item','width','version','lock','fill','move','declared','type','const','timeout','preview','data','position','skip','template','record','row','link','weight','export','sign','identifier','limit','field','from','reference','commit','route','device','context','range','array','gabage','false','import','odd','parameter','label','resource','exit','rename','reset','total','file','syntax','release','role','upload','search','output','short','log','directory','task','unexpected','property','access','submit','level','configuratio','clear','container','integer','pattern','disk','wizard','backup','command','database','protect','none','previous','invalid','current','input','get','match','instance','select','delete','package','character','root','add','connection','available','security','support','empty','view','var','store','report','default','global','require','function','option','uncaught','exist','local','content','query','avoid','temporary','push','exception','fail','client','private','document','module','undo','press','height','login','mode','receive','null','script','target','process','to','debug','even','font','condition','uninstall','code','argument','fix','change','update','request','host','format','hide','popup','source','page','interface','missing','path','override','element','shape','column','step','manager','index','cancel','sort','response','check','true','allow','value','folder','result','flag','successful','image','license','install','node','share','line','validate','edit','pull','length','set','destroy','method','permission','library','sum','author','notice','block','blank','control','patch','distance','count','state','network','remove','server',
+        ];
 
+        function randomInt(max) {
+           return Math.floor(Math.random() * max);
+        }
 
+        function nextString(){
+            const idx = randomInt(strs.length);//取配列數量之下的亂數
+            return strs[idx]; //回傳配列內的值
+        }
+        
+        function updateTextField (){
+            typedField.textContent = typed;
+            untypedField.textContent = untyped;
+        }
+
+        function next(){
+            typed = '';
+            untyped = nextString();
+            updateTextField();
+        }
+
+        document.addEventListener('keydown', function(e){ //每次偵測到keydown時
+            if (e.key !== untyped.substring(0,1)){ return ;}//如果沒對上的話這邊就return
+            typed += untyped.substring(0,1);
+            untyped = untyped.substring(1);
+
+            updateTextField();
+
+            if (untyped === ''){ //如果已經打完了untyped為空 則把字放進去
+                next();
+            }
+        });
+
+        next();
+
+    </script>
 </body>
-
 </html>
