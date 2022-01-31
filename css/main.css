@@ -225,6 +225,9 @@ section.hero .down-arrow path {
   .feature {
     gap: 0;
   }
+  .more-info {
+    margin-top: 2em;
+  }
 }
 
 @-webkit-keyframes introLoad {
