@@ -21,7 +21,7 @@
                 </svg> 
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#more-info">Sneakers</a></li>
                     <li><a href="#">Players</a></li>
                 </ul>      
             </nav>
@@ -38,7 +38,7 @@
             </svg>   
         </section>
 
-        <section class="more-info">
+        <section class="more-info" id="more-info">
             <div class="feature">
                 <div class="content">
                     <p class="title">Lightweight</p>
@@ -67,13 +67,16 @@
                 const menu = document.querySelector('.menu');
                 const close = document.querySelector('.close');
                 const nav = document.querySelector('nav');
-                
+                const a = document.querySelector('a');
+
                 menu.addEventListener('click',() => {
                     nav.classList.add('open-nav');
                 });
                 close.addEventListener('click',() => {
                     nav.classList.remove('open-nav');
                 });
+               
+                
             </script>
         </section>
     </div>

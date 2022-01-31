@@ -5,10 +5,10 @@ body {
 
 a {
     text-decoration: none;//ワキセン
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
-.hero-img {
+.hero-img { //背景
     position: absolute;
     top:0;
     left: 0;
@@ -34,7 +34,7 @@ nav {
     top: 0;
     background:white;
     height: 100vh;
-    width: 50%;
+    width: 40%;
     z-index: 2;
     text-transform: uppercase; 
     //右に隠す
@@ -93,8 +93,8 @@ section.hero {
     .down-arrow{
         stroke:white;
         position: absolute;
-        bottom: 2em;
-        width: 1em;
+        bottom: 6em;
+        width: .6em;
         animation: moveArrow 1s alternate-reverse infinite;
         path {
             fill: white;
@@ -132,11 +132,9 @@ section.hero {
 }
 
 @media only screen and (min-width: 920px){
-    
     .menu {
         display: none;
     }
-
     nav {
         transform: translateX(0);
         position: unset;
@@ -155,7 +153,7 @@ section.hero {
             a{
                 color:white;
                 padding: .5em 1.5em;
-                font-size: .9rem;
+                font-size: .6rem;
                 &:hover {
                     background:none;
                     text-decoration: underline;
@@ -196,7 +194,7 @@ section.hero {
         display:grid;
         grid-template-columns: repeat(2,auto);
         //repeat(繰り返し回数, 各トラックの値);
-        gap:3em;//間隔
+        gap: 3em;//間隔
         margin-bottom: 8em;
 
         img {
@@ -210,12 +208,12 @@ section.hero {
     }
 
     .feature.left { //真ん中の行
-        grid-template-areas: "left right";//
-
+        grid-template-areas: 
+        "left right";
         img {
             grid-area: left;
         }
-
+        //左に
         .content {
             text-align: left;
             width:25em;
@@ -227,7 +225,7 @@ section.hero {
 @media only screen and (min-width: 1200px){
     .wrapper {
         width: 1200px;
-        margin:0 auto;
+        margin: 0 auto; 
     }
     .feature {
         gap: 0;
@@ -236,8 +234,9 @@ section.hero {
         margin-top: 2em;
     }
 
+
 }
-//!!
+
 @keyframes introLoad {
     from {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
