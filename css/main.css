@@ -64,7 +64,7 @@ nav ul a:hover {
 nav .close {
   float: right;
   margin: 1.2em;
-  width: 2.5em;
+  width: 1.7em;
 }
 
 header {
@@ -77,7 +77,7 @@ header {
 }
 
 header svg {
-  width: 1.5em;
+  width: 1.2em;
   margin-top: -.6em;
   cursor: pointer;
 }
@@ -95,6 +95,8 @@ h1 {
 section.hero {
   color: white;
   height: 90vh;
+  -webkit-animation: moveDown 1s ease-in-out forwards;
+          animation: moveDown 1s ease-in-out forwards;
 }
 
 section.hero .down-arrow {
@@ -102,6 +104,7 @@ section.hero .down-arrow {
   position: absolute;
   bottom: 2em;
   width: 1em;
+  animation: moveArrow 1s alternate-reverse infinite;
 }
 
 section.hero .down-arrow path {
@@ -122,6 +125,11 @@ section.hero .down-arrow path {
 
 .more-info .desc {
   line-height: 1.5rem;
+}
+
+.open-nav {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 @media only screen and (min-width: 680px) {
@@ -249,6 +257,54 @@ section.hero .down-arrow path {
   to {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */
