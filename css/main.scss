@@ -12,7 +12,7 @@ a {
     position: absolute;
     top:0;
     left: 0;
-    background: url('../img/shoe1.png');
+    background: url('../img/00.png');
     background-size: cover;
     background-position-x: 20%;
     background-position-y: 20%;
@@ -86,7 +86,7 @@ h1 {
 }
 
 section.hero {
-    color:white;
+    color:rgb(66, 192, 201);
     height: 90vh;
     animation: moveDown 1s ease-in-out forwards;
 
@@ -105,8 +105,10 @@ section.hero {
 
 .more-info {
     img{
+        // width: 25em;
+        // height: 25em;
         width: 100%;
-        object-fit: cover; 
+        object-fit:cover; 
         height: 25em;
     }//同じ大きさの箱に入れる
 
