@@ -19,6 +19,7 @@ a {
     width: 100%;
     height: 100vh;
     z-index: -1;
+    animation: introLoad 2s forwards;//
     // overflow:hidden;
 }
 
@@ -200,5 +201,39 @@ section.hero {
             text-align: right;
         }
 
+    }
+
+    .feature.left { //真ん中の行
+        grid-template-areas: "left right";//
+
+        img {
+            grid-area: left;
+        }
+
+        .content {
+            text-align: left;
+            width:25em;
+            justify-self: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .wrapper {
+        width: 1200px;
+        margin:0 auto;
+    }
+    .feature {
+        gap: 0;
+    }
+
+}
+//!!
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 }
