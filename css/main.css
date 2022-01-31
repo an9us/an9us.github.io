@@ -115,7 +115,7 @@ section.hero .down-arrow path {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 11em;
+  height: 25em;
 }
 
 .more-info .title {

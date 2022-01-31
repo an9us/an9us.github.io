@@ -107,7 +107,7 @@ section.hero {
     img{
         width: 100%;
         object-fit: cover; 
-        height: 11em;
+        height: 25em;
     }//同じ大きさの箱に入れる
 
     .title {
@@ -175,6 +175,7 @@ section.hero {
             color: red;
         }
     }
+
     section.hero {
         color: black;
         height: auto;
@@ -192,15 +193,15 @@ section.hero {
 
     .feature{
         display:grid;
-        grid-template-columns: repeat(2,auto);
+        grid-template-columns: repeat(2, auto);
         //repeat(繰り返し回数, 各トラックの値);
         gap: 3em;//間隔
+        // margin-top: 8em;
         margin-bottom: 8em;
 
         img {
             width: 25em;
         }
-
         .content {
             text-align: right;
         }
