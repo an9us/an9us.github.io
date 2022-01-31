@@ -12,7 +12,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("../img/00.png");
+  background: url("../img/00.jpg");
   background-size: cover;
   background-position-x: 20%;
   background-position-y: 20%;
@@ -125,6 +125,19 @@ section.hero .down-arrow path {
 
 .more-info .desc {
   line-height: 1.5rem;
+}
+
+.more-info .iconlink {
+  color: cadetblue;
+  font-size: 1rem;
+}
+
+.more-info .iconlink svg {
+  width: 1em;
+}
+
+.more-info .iconlink svg path {
+  fill: cadetblue;
 }
 
 .open-nav {

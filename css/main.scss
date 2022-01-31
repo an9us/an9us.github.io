@@ -12,7 +12,7 @@ a {
     position: absolute;
     top:0;
     left: 0;
-    background: url('../img/00.png');
+    background: url('../img/00.jpg');
     background-size: cover;
     background-position-x: 20%;
     background-position-y: 20%;
@@ -104,6 +104,7 @@ section.hero {
 
 
 .more-info {
+    
     img{
         // width: 25em;
         // height: 25em;
@@ -118,6 +119,14 @@ section.hero {
     }
     .desc {
         line-height: 1.5rem;
+    }
+    .iconlink{
+        color: cadetblue;
+        font-size: 1rem;
+        svg{
+            path{fill: cadetblue;}
+            width: 1em;
+        }
     }
 }
 
@@ -144,11 +153,9 @@ section.hero {
         width:auto;
         height: auto;
         background: none;
-
         svg.close {
             display: none;
         }
-
         ul {
             display: flex;
             margin: 0;
