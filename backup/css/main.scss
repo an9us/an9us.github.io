@@ -1,0 +1,277 @@
+body {
+    margin: 1.5em; //em=16px
+    font-family: 'Poppins',sans-serif;
+}
+
+a {
+    text-decoration: none;//ワキセン
+    font-size: 1rem;
+}
+
+.hero-img { //背景
+    position: absolute;
+    top:0;
+    left: 0;
+    background: url('../img/00.jpg');
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+    // overflow:hidden;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    position:fixed;
+    right: 0;
+    top: 0;
+    background:white;
+    height: 100vh;
+    width: 40%;
+    z-index: 2;
+    text-transform: uppercase; 
+    //右に隠す
+    transform:translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 7em;
+
+        a{
+            color: black;
+            padding: .75em 2em;
+            display: block;
+            //要素は縦に並ぶ
+            &:hover {
+                background:rgb(216, 207, 207);
+            }
+        }
+    }
+
+    .close{
+        float: right;
+        margin: 1.2em;
+        width: 1.7em;
+    }
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    
+    svg{
+        width: 1.2em;
+        margin-top: -.6em;
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+}
+
+.subhead {
+    font-size: 1.4rem;
+}
+
+section.hero {
+    color:rgb(66, 192, 201);
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+
+    .down-arrow{
+        stroke:white;
+        position: absolute;
+        bottom: 6em;
+        width: .6em;
+        animation: moveArrow 1s alternate-reverse infinite;
+        path {
+            fill: white;
+        }
+    }
+}
+
+
+.more-info {
+    
+    img{
+        // width: 25em;
+        // height: 25em;
+        width: 100%;
+        object-fit:cover; 
+        height: 25em;
+    }//同じ大きさの箱に入れる
+
+    .title {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    .desc {
+        line-height: 1.5rem;
+    }
+    .iconlink{
+        color: cadetblue;
+        font-size: 1rem;
+        svg{
+            path{fill: cadetblue;}
+            width: 1em;
+        }
+    }
+}
+
+.open-nav{
+    transform: translateX(0);
+}
+
+@media only screen and (min-width: 680px){
+    
+    body {
+        margin: 1.5em 5em; //横が680pxに超えた時に5emに 
+        font-family: 'Poppins',sans-serif;
+    }
+}
+
+@media only screen and (min-width: 920px){
+    .menu {
+        display: none;
+    }
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width:auto;
+        height: auto;
+        background: none;
+        svg.close {
+            display: none;
+        }
+        ul {
+            display: flex;
+            margin: 0;
+            a{
+                color:white;
+                padding: .5em 1.5em;
+                font-size: .6rem;
+                &:hover {
+                    background:none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img{
+        left:unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo{
+        color:black;
+        span {
+            color: red;
+        }
+    }
+
+    section.hero {
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+
+        svg.down-arrow {
+            stroke: black;
+            position: unset;
+            path {
+                fill:black;
+            }
+        }
+    }
+
+    .feature{
+        display:grid;
+        grid-template-columns: repeat(2, auto);
+        //repeat(繰り返し回数, 各トラックの値);
+        gap: 3em;//間隔
+        // margin-top: 8em;
+        margin-bottom: 8em;
+
+        img {
+            width: 25em;
+        }
+        .content {
+            text-align: right;
+        }
+
+    }
+
+    .feature.left { //真ん中の行
+        grid-template-areas: 
+        "left right";
+        img {
+            grid-area: left;
+        }
+        //左に
+        .content {
+            text-align: left;
+            width:25em;
+            justify-self: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .wrapper {
+        width: 1200px;
+        margin: 0 auto; 
+    }
+    .feature {
+        gap: 0;
+    }
+    .more-info{
+        margin-top: 2em;
+    }
+
+
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }   
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

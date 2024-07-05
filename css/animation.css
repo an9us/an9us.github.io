@@ -1,0 +1,230 @@
+/* ローディングアニメーション */
+#main-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transition: opacity 1.5s ease-out;
+  opacity: 1;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #CF0534;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #CF0534;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #CF0534;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0%   {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0%   {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+/* テキストホバーアニメーション */
+.textanimation span {
+    opacity: 0;
+    transition: all 1s ease;
+    transform: translateY(50px);
+    display: inline-block;
+}
+
+.textanimation span.transform {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* ネットワーク数字アニメーション */
+.odometer {
+  visibility: hidden;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+/* 最新情報,アンダーラインアニメーション */
+  .underline-animation {
+    position: relative;
+    display: inline-block; 
+    color: inherit; 
+    text-decoration: none; 
+  }
+  
+  .underline-animation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5em;
+    width: 100%;
+    height: 3px; 
+    border-radius: 30px;
+    background: #CF0534;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.5s ease; 
+  }
+  
+  .underline-animation:hover::after {
+    transform: scaleX(1); 
+  }
+  
+  /* ボタンアニメーション */
+  :root {
+    --border-color: #ffffff00;
+    --hover-shadow-color: #5457533a;
+    --main-bg-color: #CF0534;
+    --highlight-color: #ff003c;
+    --text-color: #ffffff;
+}
+
+.button_su {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+}
+
+.su_button_circle {
+    border-radius: 1000px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.button_su_inner {
+    display: inline-block;
+    background: var(--main-bg-color);
+    text-decoration: none;
+    padding: 10px 30px;
+}
+
+.button_text_container {
+    position: relative;
+    color: var(--text-color);
+}
+
+.explode-circle {
+    animation: explode 1.5s forwards;
+}
+
+.desplode-circle {
+    animation: desplode 0.5s forwards;
+}
+
+.raise, .raise-noshadow {
+    transition: 0.25s;
+}
+
+.raise {
+    border: 0.5px solid var(--border-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.raise:hover,
+.raise:focus {
+    border-color: var(--hover-shadow-color);
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover-shadow-color);
+    transform: translateY(-0.25em);
+}
+
+.raise-noshadow:hover,
+.raise-noshadow:focus {
+    transform: translateY(-0.25rem);
+}
+
+@keyframes explode {
+    0% {
+        width: 0;
+        height: 0;
+        margin-left: 0;
+        margin-top: 0;
+        background-color: var(--highlight-color);
+    }
+    100% {
+        width: 1000px;
+        height: 1000px;
+        margin-left: -500px;
+        margin-top: -500px;
+        background-color: var(--highlight-color);
+    }
+}
+
+@keyframes desplode {
+    0% {
+        width: 1000px;
+        height: 1000px;
+        margin-left: -500px;
+        margin-top: -500px;
+        background-color: var(--highlight-color);
+    }
+    100% {
+        width: 0;
+        height: 0;
+        margin-left: 0;
+        margin-top: 0;
+        background-color: var(--highlight-color);
+    }
+}
