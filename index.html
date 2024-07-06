@@ -42,7 +42,7 @@
         お使いのブラウザはビデオタグをサポートしていません.
       </video>
 
-      <img class="no-play" id="fallback-image" loading="lazy" src="assets/img/tokyo-bg.jpg" alt="" style="display:none;">
+      <img id="fallback-image" loading="lazy" src="assets/img/tokyo-bg.jpg" alt="" style="display:none;">
 
       <div class="overlay"></div>
       <img class="overlay-wave" src="assets/img/bg-01.svg" alt="背景">
@@ -705,6 +705,8 @@
     video.addEventListener('pause', showFallback);
     video.onerror = showFallback;
   });
+
+  
   </script>
 </body>
 
