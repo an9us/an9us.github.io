@@ -149,7 +149,7 @@ body {
   z-index: -1;
 }
 
-.hero-bg #fallback-image {
+#fallback-image {
   position: absolute;
   /* top: 50%;
   left: 50%;
