@@ -40,11 +40,13 @@
       <video autoplay muted loop playsinline>
         <source src="assets/video/herobg-video.webm" type="video/webm">
         <source src="assets/video/herobg-video.mp4" type="video/mp4">
-        <!-- Your browser does not support the video tag. -->
         お使いのブラウザはビデオタグをサポートしていません.
       </video>
+
+      <img class="no-play" id="fallback-image" loading="lazy" src="assets/img/tokyo-bg.jpg" alt="" style="display:none;">
+
       <div class="overlay"></div>
-      <img class="overlay-bg" src="/assets/img/bg-01.svg" loading="lazy" alt="背景">
+      <img class="overlay-wave" src="assets/img/bg-01.svg" alt="背景">
     </div>
 
     <nav class="navbar navbar-expand navbar-light fixed-top">
@@ -175,7 +177,7 @@
                 大東建託完工金額：４,５００億円(2022年度実績)
               </div>
             </div>
-            <img class="mt-5 w-100" src="/assets/img/japan-map.webp" loading="lazy" alt="マップ">
+            <img class="mt-5 w-100" src="assets/img/japan-map.webp" loading="lazy" alt="マップ">
           </div>
 
           <div class="col-md-6 timeline-item">
@@ -227,17 +229,17 @@
         <div class="row group-btn-container timeline-item">
           <div class="col-lg-4 col-md-7 col-12 mb-3">
             <a href="https://www.kentaku-leasing.co.jp/" class="btn bg-white rounded-5 p-3 w-100 raise" target="_blank">
-              <img src="/assets/img/group-logo-01.webp" loading="lazy" alt="大東建託リーシングHP">
+              <img src="assets/img/group-logo-01.webp" loading="lazy" alt="大東建託リーシングHP">
             </a>
           </div>
           <div class="col-lg-4 col-md-7 col-12 mb-3">
             <a href="https://www.kentaku.co.jp/" class="btn bg-white rounded-5 p-3 w-100 raise" target="_blank">
-              <img src="/assets/img/group-logo-02.webp" loading="lazy" alt="大東建託HP">
+              <img src="assets/img/group-logo-02.webp" loading="lazy" alt="大東建託HP">
             </a>
           </div>
           <div class="col-lg-4 col-md-7 col-12 mb-3">
             <a href="https://www.kentaku-partners.co.jp/" class="btn bg-white rounded-5 p-3 w-100 raise" target="_blank">
-              <img src="/assets/img/group-logo-03.webp" loading="lazy" alt="大東建託パートナーズ">
+              <img src="assets/img/group-logo-03.webp" loading="lazy" alt="大東建託パートナーズ">
             </a>
           </div>
         </div>
@@ -291,7 +293,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <img class="merit-card-img" src="/assets/img/merit-01.webp" loading="lazy" alt="メリット画像">
+                  <img class="merit-card-img" src="assets/img/merit-01.webp" loading="lazy" alt="メリット画像">
                 </div>
               </div>
     
@@ -311,7 +313,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
-                  <img class="merit-card-img" src="/assets/img/merit-02.webp" loading="lazy" alt="メリット画像">
+                  <img class="merit-card-img" src="assets/img/merit-02.webp" loading="lazy" alt="メリット画像">
                 </div>
               </div>
     
@@ -337,7 +339,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <img class="merit-card-img" src="/assets/img/merit-03.webp" loading="lazy" alt="メリット画像">
+                  <img class="merit-card-img" src="assets/img/merit-03.webp" loading="lazy" alt="メリット画像">
                 </div>
               </div>
             </div> <!-- merit-card -->
@@ -357,7 +359,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
-                  <img class="merit-card-img" src="/assets/img/merit-04.webp" loading="lazy" alt="メリット画像">
+                  <img class="merit-card-img" src="assets/img/merit-04.webp" loading="lazy" alt="メリット画像">
                 </div>
               </div>
     
@@ -376,7 +378,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <img class="merit-card-img" src="/assets/img/merit-05.webp" loading="lazy" alt="メリット画像">
+                  <img class="merit-card-img" src="assets/img/merit-05.webp" loading="lazy" alt="メリット画像">
                 </div>
               </div>
     
@@ -408,7 +410,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
-                  <img class="merit-card-img" src="/assets/img/merit-06.webp" loading="lazy" alt="メリット画像">
+                  <img class="merit-card-img" src="assets/img/merit-06.webp" loading="lazy" alt="メリット画像">
                 </div>
               </div>
             </div> <!-- merit-card -->
@@ -466,16 +468,16 @@
                     </div>
                     <div class="sns-icons col-md-7 p-0">
                       <a href="https://www.instagram.com/dkkyouryoku/" target="_blank">
-                        <img class="sns-icon raise-noshadow" src="/assets/img/icon_instagram.webp" alt="Instagram">
+                        <img class="sns-icon raise-noshadow" src="assets/img/icon_instagram.webp" alt="Instagram">
                       </a>
                       <a href="https://x.com/DKkyouryoku" target="_blank">
-                        <img class="sns-icon raise-noshadow" src="/assets/img/icon_x.webp" alt="X(Twitter)">
+                        <img class="sns-icon raise-noshadow" src="assets/img/icon_x.webp" alt="X(Twitter)">
                       </a>
                       <a href="https://www.tiktok.com/@dkkyouryoku?is_from_webapp=1&sender_device=pc" target="_blank">
-                        <img class="sns-icon raise-noshadow" src="/assets/img/icon_tiktok.webp" alt="TikTok">
+                        <img class="sns-icon raise-noshadow" src="assets/img/icon_tiktok.webp" alt="TikTok">
                       </a>
                       <a href="https://www.youtube.com/@DKkyouryoku" target="_blank">
-                        <img class="sns-icon raise-noshadow" src="/assets/img/icon_youtube.webp" alt="YouTube">
+                        <img class="sns-icon raise-noshadow" src="assets/img/icon_youtube.webp" alt="YouTube">
                       </a>
                     </div>
                   </div>
@@ -492,7 +494,7 @@
                     </div>                
                     <div class="sns-icons col-md-2 p-0 ps-1">
                       <a href="https://page.line.me/809fzbcw?openQrModal=true" target="_blank">
-                        <img class="sns-icon raise-noshadow" src="/assets/img/icon_line.webp" loading="lazy" alt="画像">
+                        <img class="sns-icon raise-noshadow" src="assets/img/icon_line.webp" loading="lazy" alt="画像">
                       </a>
                     </div>
                   </div>
@@ -570,7 +572,7 @@
             <div class="col-md-6">
               <div class="row">
                 <div class="col-4 ps-md-2 d-flex justify-content-center align-items-center">
-                  <img class="app-icon" src="/assets/img/icon_app.webp" loading="lazy" alt="大東建託協力会アプリ">
+                  <img class="app-icon" src="assets/img/icon_app.webp" loading="lazy" alt="大東建託協力会アプリ">
                 </div>
                 <div class="col-8 d-flex justify-content-center align-items-center">
                   <div class="row">
@@ -586,12 +588,12 @@
                 <div class="col-12 ps-4 app-title d-none d-md-block">アプリダウンロード</div>
                 <div class="col-6 d-flex justify-content-center">
                   <a href="https://apps.apple.com/jp/app/%E5%A4%A7%E6%9D%B1%E5%BB%BA%E8%A8%97%E5%8D%94%E5%8A%9B%E4%BC%9A/id1533956165" target="_blank">
-                    <img class="app-store-icon" src="/assets/img/app-appstore.webp" loading="lazy" alt="AppStoreダウンロード">
+                    <img class="app-store-icon" src="assets/img/app-appstore.webp" loading="lazy" alt="AppStoreダウンロード">
                   </a>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                   <a href="https://play.google.com/store/apps/details?id=jp.new_kentaku_kyouryokukai.apps&hl=ja&pli=1" target="_blank">
-                    <img class="app-store-icon" src="/assets/img/app-playstore.webp" loading="lazy" alt="PlayStoreダウンロード">
+                    <img class="app-store-icon" src="assets/img/app-playstore.webp" loading="lazy" alt="PlayStoreダウンロード">
                   </a>
                 </div>
               </div>
@@ -612,7 +614,7 @@
       <div class="container mt-4">
         <div class="row">
           <div class="col-md-4">
-            <img src="/assets/img/h_logo.webp" alt="大東建託協力会">
+            <img src="assets/img/h_logo.webp" alt="大東建託協力会">
             <div class="mt-3 ms-2 fw-bold">大東建託協力会事務局</div>
             <div class="mt-1 ms-2 contact-link">
               <a href="tel:03-6718-9250"><i class="bi bi-telephone-fill me-2"></i>03-6718-9250</a>
@@ -654,8 +656,34 @@
   <!-- ファイル読み込み -->
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/animation.js"></script>
-  <script src="js/IntersectionObserver.js"></script>
+  <!-- <script src="js/IntersectionObserver.js"></script> -->
+  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('background-video');
+    const fallbackImage = document.getElementById('fallback-image');
 
+    function showFallback() {
+      video.style.display = 'none';
+      fallbackImage.style.display = 'block';
+    }
+
+    // 当视频无法播放时触发
+    video.onerror = showFallback;
+
+    // 尝试播放视频
+    video.play().catch(showFallback);
+
+    // 如果视频播放失败
+    video.addEventListener('play', function() {
+      if (video.paused) {
+        showFallback();
+      }
+    });
+
+    // 如果用户停止了视频播放
+    video.addEventListener('pause', showFallback);
+  });
+  </script>
 </body>
 
 </html>
