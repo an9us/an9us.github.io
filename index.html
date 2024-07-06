@@ -657,46 +657,54 @@
   <script src="js/animation.js"></script>
   <!-- <script src="js/IntersectionObserver.js"></script> -->
   <script>
- function checkLowPowerMode() {
-    if (navigator.getBattery) {
-      navigator.getBattery().then(function(battery) {
-        if (battery.savePower) {
-          // 省電モードが有効の場合、ビデオを停止して非表示にし、画像を表示する
-          document.getElementById('background-video').style.display = 'none';
-          document.getElementById('fallback-image').style.display = 'block';
-        } else {
-          // 省電モードが無効の場合、ビデオを再生して表示し、画像を非表示にする
-          document.getElementById('background-video').style.display = 'block';
-          document.getElementById('fallback-image').style.display = 'none';
-        }
-      });
-    } else {
-      // 不支持 navigator.getBattery 的浏览器
-      document.getElementById('background-video').style.display = 'block';
-      document.getElementById('fallback-image').style.display = 'none';
-    }
-  }
-
-  // 页面加载时检查省电模式
-  window.onload = function() {
-    checkLowPowerMode();
-  };
-
-  // 添加手动切换按钮
-  const button = document.createElement('button');
-  button.innerText = '切换视频/图片';
-  button.onclick = function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('background-video');
     const fallbackImage = document.getElementById('fallback-image');
-    if (video.style.display === 'none') {
-      video.style.display = 'block';
-      fallbackImage.style.display = 'none';
-    } else {
+
+    function showFallback() {
       video.style.display = 'none';
       fallbackImage.style.display = 'block';
     }
-  };
-  document.body.appendChild(button);
+
+    function setVideoSource() {
+      if (video.canPlayType('video/webm')) {
+        video.src = 'assets/video/herobg-video.webm';
+      } else if (video.canPlayType('video/mp4')) {
+        video.src = 'assets/video/herobg-video.mp4';
+      } else {
+        showFallback();
+      }
+    }
+
+    function checkLowPowerMode() {
+      if (navigator.getBattery) {
+        navigator.getBattery().then(function(battery) {
+          if (battery.savePower) {
+            showFallback();
+          } else {
+            setVideoSource();
+            video.load();
+            video.play().catch(showFallback);
+          }
+        });
+      } else {
+        setVideoSource();
+        video.load();
+        video.play().catch(showFallback);
+      }
+    }
+
+    checkLowPowerMode();
+
+    video.addEventListener('play', function() {
+      if (video.paused) {
+        showFallback();
+      }
+    });
+
+    video.addEventListener('pause', showFallback);
+    video.onerror = showFallback;
+  });
   </script>
 </body>
 
