@@ -693,7 +693,7 @@ footer a {
   
   .floating-buttons {
     flex-direction: row;
-    bottom: 5rem;
+    bottom: 10rem;
     right: auto;
     top: auto;
     left: 50%;
